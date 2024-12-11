@@ -1,10 +1,6 @@
 import { MongoClient } from 'mongodb';
 
-if (!process.env.MONGODB_URI) {
-  throw new Error('Please add your MongoDB URI to .env.local');
-}
-
-const uri = process.env.MONGODB_URI;
+const uri = process.env.MONGODB_URI || 'mongodb+srv://pumpuser:PumpCounter123@cluster0.a38p8.mongodb.net/pump-counter?retryWrites=true&w=majority&appName=Cluster0';
 const options = {};
 
 let client;
